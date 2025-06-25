@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latency Tester</title>
+  <!-- htmx library (your only JS!) -->
+  <script src="https://unpkg.com/htmx.org@1.11.1"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { padding: 0.5rem 1rem; font-size: 1rem; }
+    #result { margin-top: 1rem; font-size: 1.25rem; }
+  </style>
+</head>
+<body>
+  <h1>Latency Tester</h1>
+  <button 
+    hx-get="/ping" 
+    hx-swap="innerHTML" 
+    hx-target="#result"
+    hx-trigger="click"
+  >
+    Ping Server
+  </button>
+  <div id="result">Click “Ping Server” to measure latency.</div>
+</body>
+</html>
